@@ -1,0 +1,36 @@
+app/textGame_backend/repositories/VotesRepository.java
+ app.textGame_backend.repositories.VotesRepository
+app/textGame_backend/entities/UserVotes.java
+ app.textGame_backend.entities.UserVotes
+app/textGame_backend/repositories/UserRepository.java
+ app.textGame_backend.repositories.UserRepository
+app/textGame_backend/entities/Votes.java
+ app.textGame_backend.entities.Votes
+app/textGame_backend/externalHelper/Helper.java
+ app.textGame_backend.externalHelper.Helper
+app/textGame_backend/entities/Threads.java
+ app.textGame_backend.entities.Threads
+app/textGame_backend/controllers/PostController.java
+ app.textGame_backend.controllers.PostController
+app/textGame_backend/entities/User.java
+ app.textGame_backend.entities.User
+app/textGame_backend/TextGameBackendApplication.java
+ app.textGame_backend.TextGameBackendApplication
+app/textGame_backend/repositories/UserVotesRepository.java
+ app.textGame_backend.repositories.UserVotesRepository
+app/textGame_backend/entities/Category.java
+ app.textGame_backend.entities.Category
+app/textGame_backend/controllers/ThreadController.java
+ app.textGame_backend.controllers.ThreadController
+app/textGame_backend/entities/Status.java
+ app.textGame_backend.entities.Status
+app/textGame_backend/controllers/UserController.java
+ app.textGame_backend.controllers.UserController
+app/textGame_backend/repositories/PostRepository.java
+ app.textGame_backend.repositories.PostRepository
+app/textGame_backend/entities/ResponseMessage.java
+ app.textGame_backend.entities.ResponseMessage
+app/textGame_backend/repositories/ThreadRepository.java
+ app.textGame_backend.repositories.ThreadRepository
+app/textGame_backend/entities/Post.java
+ app.textGame_backend.entities.Post
