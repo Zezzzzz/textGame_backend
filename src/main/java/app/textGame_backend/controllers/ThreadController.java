@@ -1,9 +1,7 @@
 package app.textGame_backend.controllers;
 
-import app.textGame_backend.entities.Post;
 import app.textGame_backend.entities.Threads;
 import app.textGame_backend.entities.User;
-import app.textGame_backend.entities.Votes;
 import app.textGame_backend.repositories.PostRepository;
 import app.textGame_backend.repositories.ThreadRepository;
 import app.textGame_backend.repositories.UserRepository;
@@ -17,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
