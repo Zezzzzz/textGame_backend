@@ -102,9 +102,18 @@ public class ThreadController{
     public String getAllThreadsCreatedByUser(@RequestParam int id_user) {
         ArrayList<Threads> arr = threadRepository.getThreadsCreatedByUser(id_user);
         if(arr == null) {
-            arr = new ArrayList<>();
+            return "failed";
+        } else{
+            ArrayList<String> results = new ArrayList<>();
+            for(Threads thread: arr){
+                ArrayList<String> arrayList = new ArrayList<>();
+                arrayList.add(gson.toJson(thread));
+                arrayList.add(""+Optional.ofNullable(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
+                results.add(gson.toJson(arrayList));
+            }
+            return gson.toJson(results);
         }
-        return gson.toJson(arr);
     }
 
     @PostMapping(path="/addNewThread", produces = MediaType.APPLICATION_JSON_VALUE)
