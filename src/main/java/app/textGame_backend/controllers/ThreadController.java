@@ -108,7 +108,7 @@ public class ThreadController{
             for(Threads thread: arr){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(thread));
-                arrayList.add(""+Optional.ofNullable(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+Optional.of(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
                 arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
                 results.add(gson.toJson(arrayList));
             }
