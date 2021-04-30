@@ -28,4 +28,9 @@ public interface ThreadRepository extends JpaRepository<Threads, String> {
             "(SELECT SUM(vote_count) AS votes, thread_id FROM votes GROUP BY thread_id) t2 ON t2.thread_id = threads.id  \n" +
             "ORDER BY t2.votes DESC", nativeQuery = true)
     ArrayList<Threads> getMostPopThread();
+
+    @Query(value = "SELECT * FROM threads inner join\n" +
+            "(SELECT thread_id FROM post WHERE id_user = :id_user) t2 ON t2.thread_id = threads.id\n" +
+            "GROUP BY threads.id", nativeQuery = true)
+    ArrayList<Threads> getAllThreadsWithCommentsByUser(@Param("id_user") int id_user);
 }

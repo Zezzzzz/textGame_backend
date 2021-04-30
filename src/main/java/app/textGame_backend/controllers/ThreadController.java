@@ -116,6 +116,25 @@ public class ThreadController{
         }
     }
 
+    @GetMapping(path="/getAllThreadsCommentedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getAllThreadsCommentedByUser(@RequestParam int id_user) {
+        ArrayList<Threads> arr = threadRepository.getAllThreadsWithCommentsByUser(id_user);
+        if(arr == null) {
+            return "failed";
+        } else{
+            ArrayList<String> results = new ArrayList<>();
+            for(Threads thread: arr){
+                ArrayList<String> arrayList = new ArrayList<>();
+                arrayList.add(gson.toJson(thread));
+                arrayList.add(""+Optional.of(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
+                results.add(gson.toJson(arrayList));
+            }
+            return gson.toJson(results);
+        }
+    }
+
     @PostMapping(path="/addNewThread", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String addNewThread(@RequestBody String reqBody) {
