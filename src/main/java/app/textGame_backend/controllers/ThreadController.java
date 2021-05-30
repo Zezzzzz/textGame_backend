@@ -40,16 +40,16 @@ public class ThreadController{
 
     static final String SUCCESS_MSG = "Success";
 
-    @GetMapping(path="/getLatest", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/latest", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getLatestThreads() {
-        ArrayList<Threads> threadsList = threadRepository.getNewestThread();
+    public String getLatestThreads(@RequestParam int limit, @RequestParam int offset) {
+        ArrayList<Threads> threadsList = threadRepository.getNewestThread(limit,offset);
         if(threadsList != null){
             ArrayList<String> results = new ArrayList<>();
             for(Threads thread: threadsList){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(thread));
-                arrayList.add(""+Optional.ofNullable(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+Optional.of(postRepository.getComments(thread.getThreadID(),0,0).size()).orElse(0));
                 arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
                 results.add(gson.toJson(arrayList));
             }
@@ -58,23 +58,23 @@ public class ThreadController{
         return "failed";
     }
 
-    @GetMapping(path="/getListOfThreads", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/listOfThreads", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getListOfThreads(@RequestParam String category) {
+    public String getListOfThreads(@RequestParam String category, @RequestParam int limit, @RequestParam int offset) {
         ArrayList<Threads> threadsList;
-        if(category.equals("pop")){
-            threadsList = threadRepository.getMostPopThread();
+        if(category.equals("reco")){
+            threadsList = threadRepository.getRecommendedThread(limit,offset);
         } else if(category.equals("new")){
-            threadsList = threadRepository.getNewestThread();
+            threadsList = threadRepository.getNewestThread(limit,offset);
         } else {
-            threadsList = new ArrayList<>();
+            threadsList = threadRepository.getMostPopThread(limit,offset);
         }
         if(threadsList != null){
             ArrayList<String> results = new ArrayList<>();
             for(Threads thread: threadsList){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(thread));
-                arrayList.add(""+Optional.ofNullable(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+postRepository.getNumberOfCommentsInThread(thread.getThreadID()));
                 arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
                 results.add(gson.toJson(arrayList));
             }
@@ -84,7 +84,7 @@ public class ThreadController{
         return "failed";
     }
 
-    @GetMapping(path="/getThread", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/thread", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String getThread(@RequestParam int threadID) {
         Threads thread = threadRepository.getThreadWithId(threadID);
@@ -97,10 +97,10 @@ public class ThreadController{
         return "Not Found";
     }
 
-    @GetMapping(path="/getAllThreadsCreatedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/allThreadsCreatedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getAllThreadsCreatedByUser(@RequestParam int id_user) {
-        ArrayList<Threads> arr = threadRepository.getThreadsCreatedByUser(id_user);
+    public String getAllThreadsCreatedByUser(@RequestParam int id_user, @RequestParam int limit, @RequestParam int offset) {
+        ArrayList<Threads> arr = threadRepository.getThreadsCreatedByUser(id_user,limit,offset);
         if(arr == null) {
             return "failed";
         } else{
@@ -108,7 +108,7 @@ public class ThreadController{
             for(Threads thread: arr){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(thread));
-                arrayList.add(""+Optional.of(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+postRepository.getNumberOfCommentsInThread(thread.getThreadID()));
                 arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
                 results.add(gson.toJson(arrayList));
             }
@@ -116,10 +116,10 @@ public class ThreadController{
         }
     }
 
-    @GetMapping(path="/getAllThreadsCommentedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/allThreadsCommentedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getAllThreadsCommentedByUser(@RequestParam int id_user) {
-        ArrayList<Threads> arr = threadRepository.getAllThreadsWithCommentsByUser(id_user);
+    public String getAllThreadsCommentedByUser(@RequestParam int id_user, @RequestParam int limit, @RequestParam int offset) {
+        ArrayList<Threads> arr = threadRepository.getAllThreadsWithCommentsByUser(id_user,limit,offset);
         if(arr == null) {
             return "failed";
         } else{
@@ -127,7 +127,7 @@ public class ThreadController{
             for(Threads thread: arr){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(thread));
-                arrayList.add(""+Optional.of(postRepository.getComments(thread.getThreadID()).size()).orElse(0));
+                arrayList.add(""+postRepository.getNumberOfCommentsInThread(thread.getThreadID()));
                 arrayList.add(""+Optional.ofNullable(votesRepository.threadVotes(thread.getThreadID())).orElse(0));
                 results.add(gson.toJson(arrayList));
             }
@@ -135,7 +135,7 @@ public class ThreadController{
         }
     }
 
-    @PostMapping(path="/addNewThread", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path="/newThread", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String addNewThread(@RequestBody String reqBody) {
         JsonObject jo = gson.fromJson(reqBody, JsonObject.class);

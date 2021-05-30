@@ -21,4 +21,8 @@ public interface UserVotesRepository extends JpaRepository<UserVotes, String> {
     @Transactional
     @Query(value = "UPDATE user_votes SET vote = vote - 1 WHERE user_id =:user_id and post_id =:post_id", nativeQuery = true)
     void minusCurrentUserVote (@Param("user_id") int user_id, @Param("post_id") int post_id);
+
+    @Query(value = "SELECT COUNT(user_id) FROM user_votes WHERE user_id = :user_id and vote <> 0", nativeQuery = true)
+    Integer userVotes(@Param("user_id") int user_id);
+
 }

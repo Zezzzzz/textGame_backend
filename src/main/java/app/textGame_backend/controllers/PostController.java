@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -40,21 +39,30 @@ public class PostController{
 
     static final String SUCCESS_MSG = "Success";
 
-    @GetMapping(path="/getAllPostOfThread", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/allPostOfThread", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getAllPostOfThread(@RequestParam int threadID, @RequestParam int currentUserID) {
-        ArrayList<Post> commentList = postRepository.getComments(threadID);
+    public String getAllPostOfThread(@RequestParam int threadID, @RequestParam int currentUserID, @RequestParam String category, @RequestParam int limit, @RequestParam int offset) {
+        ArrayList<Post> commentList = new ArrayList<>();
+        //System.out.println(limit + " " + offset + " " + category);
+        if(category.equals("latest")) {
+            commentList = postRepository.getComments(threadID,limit,offset);
+        } else if(category.equals("top")){
+            commentList =postRepository.getCommentsByVotes(threadID,limit,offset);
+        }
         ArrayList<String> results = new ArrayList<>();
+        //System.out.println(gson.toJson(commentList));
         if(commentList != null){
             for(Post post: commentList){
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(gson.toJson(post));
+
                 arrayList.add(""+Optional.ofNullable(votesRepository.getVote(post.getPostID())).orElse(0));
                 User creator = userRepository.getCreatorOfPost(post.getPostID());
                 arrayList.add(gson.toJson(creator));
                 arrayList.add(""+userVotesRepository.existingUserVote(currentUserID,post.getPostID()));
                 results.add(gson.toJson(arrayList));
             }
+
             return gson.toJson(results);
         }
         return "failed";
@@ -86,7 +94,7 @@ public class PostController{
         return gson.toJson(votes);
     }
 
-    @PostMapping(path="/addComment", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path="/comment", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String addComment(@RequestBody String reqBody) {
         JsonObject jo = gson.fromJson(reqBody, JsonObject.class);
@@ -104,10 +112,10 @@ public class PostController{
 
     }
 
-    @GetMapping(path="/getAllPostsCreatedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/allPostsCreatedByUser", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String getAllPostsCreatedByUser(@RequestParam int id_user) {
-        ArrayList<Post> arr = postRepository.getPostsCreatedByUser(id_user);
+    public String getAllPostsCreatedByUser(@RequestParam int id_user, @RequestParam int limit, @RequestParam int offset) {
+        ArrayList<Post> arr = postRepository.getPostsCreatedByUser(id_user,limit,offset);
         if(arr == null) {
             arr = new ArrayList<>();
         }
