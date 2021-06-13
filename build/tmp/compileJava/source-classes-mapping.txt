@@ -10,6 +10,8 @@ app/textGame_backend/externalHelper/Helper.java
  app.textGame_backend.externalHelper.Helper
 app/textGame_backend/entities/Threads.java
  app.textGame_backend.entities.Threads
+app/textGame_backend/entities/MessageService.java
+ app.textGame_backend.entities.MessageService
 app/textGame_backend/entities/Secrets.java
  app.textGame_backend.entities.Secrets
 app/textGame_backend/controllers/PostController.java
@@ -26,12 +28,16 @@ app/textGame_backend/controllers/ThreadController.java
  app.textGame_backend.controllers.ThreadController
 app/textGame_backend/entities/Status.java
  app.textGame_backend.entities.Status
+app/textGame_backend/controllers/MessageController.java
+ app.textGame_backend.controllers.MessageController
 app/textGame_backend/controllers/UserController.java
  app.textGame_backend.controllers.UserController
 app/textGame_backend/controllers/SecretsController.java
  app.textGame_backend.controllers.SecretsController
 app/textGame_backend/repositories/PostRepository.java
  app.textGame_backend.repositories.PostRepository
+app/textGame_backend/entities/NotificationRequestDto.java
+ app.textGame_backend.entities.NotificationRequestDto
 app/textGame_backend/repositories/SecretsRepository.java
  app.textGame_backend.repositories.SecretsRepository
 app/textGame_backend/entities/ResponseMessage.java

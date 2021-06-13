@@ -36,6 +36,8 @@ public class ThreadController{
     @Autowired
     private VotesRepository votesRepository;
 
+
+
     Gson gson = new GsonBuilder().create();
 
     static final String SUCCESS_MSG = "Success";

@@ -27,6 +27,9 @@ public class User {
     @Column(name="profile_pic")
     private String profile_pic;
 
+    @Column(name="firebase_token")
+    private String firebase_token;
+
     public User() {
     }
 
@@ -86,7 +89,15 @@ public class User {
         this.profile_pic = profile_pic;
     }
 
-    public User(int userID, String username, String email, boolean is_moderator, boolean blocked, String id_token, String profile_pic) {
+    public String getFirebaseToken() {
+        return firebase_token;
+    }
+
+    public void setFirebaseToken(String firebase_token) {
+        this.firebase_token = firebase_token;
+    }
+
+    public User(int userID, String username, String email, boolean is_moderator, boolean blocked, String id_token, String profile_pic, String firebase_token) {
         this.userID = userID;
         this.username = username;
         this.email = email;
@@ -94,5 +105,6 @@ public class User {
         this.blocked = blocked;
         this.id_token = id_token;
         this.profile_pic = profile_pic;
+        this.firebase_token = firebase_token;
     }
 }

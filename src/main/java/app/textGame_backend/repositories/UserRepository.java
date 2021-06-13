@@ -17,7 +17,7 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM user WHERE user_id = :userID", nativeQuery = true)
+    @Query(value = "DELETE FROM user WHERE id = :userID", nativeQuery = true)
     void deleteUser(@Param("userID") int userID);
 
     @Modifying
@@ -30,5 +30,10 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     @Query(value = "SELECT * FROM user WHERE id = (SELECT id_user FROM post WHERE id = :postID)", nativeQuery = true)
     User getCreatorOfPost(@Param("postID") int postID);
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE user SET firebase_token = :firebase_token WHERE id = :userID", nativeQuery = true)
+    void updateUserFireBase(@Param("firebase_token") String firebase_token, @Param("userID") int userID);
 
 }
