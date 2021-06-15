@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfc3a6a5-ce35-41d2-a92a-91437566cb98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserVotesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserVotesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserVotesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserVotesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore.swp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/firebase-service-account.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/firebase-service-account.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
