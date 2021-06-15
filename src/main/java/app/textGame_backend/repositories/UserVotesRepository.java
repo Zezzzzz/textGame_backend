@@ -29,4 +29,9 @@ public interface UserVotesRepository extends JpaRepository<UserVotes, String> {
     @Transactional
     @Query(value = "DELETE FROM user_votes WHERE user_id = :user_id", nativeQuery = true)
     void deleteUserVotesByUserId(@Param("user_id") int user_id);
+
+    @Modifying
+    @Transactional
+    @Query(value = "DELETE FROM user_votes WHERE post_id = :post_id", nativeQuery = true)
+    void deleteUserVotesByPostId(@Param("post_id") int post_id);
 }

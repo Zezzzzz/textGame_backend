@@ -116,6 +116,7 @@ public class PostController{
         int postID = jo.get("postID").getAsInt();
         int userID = jo.get("userID").getAsInt();
         if(postRepository.getPostById(postID).getUserID() == userID){
+            userVotesRepository.deleteUserVotesByPostId(postID);
             votesRepository.deleteVotesByPostId(postID);
             postRepository.deletePostById(postID);
             return "success";

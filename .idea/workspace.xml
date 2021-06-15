@@ -5,50 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfc3a6a5-ce35-41d2-a92a-91437566cb98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/MessageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/entities/MessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/entities/NotificationRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/firebase-service-account.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.2/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/TextGameBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/TextGameBackendApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/ThreadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/ThreadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/PostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/ThreadRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/ThreadRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserVotesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/UserVotesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/VotesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/app/textGame_backend/repositories/VotesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/TextGameBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/TextGameBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/FireBaseMessagingService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/ThreadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/ThreadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/entities/FireBaseMessaging.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/ThreadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/ThreadRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserVotesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/UserVotesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/VotesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/textGame_backend/repositories/VotesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
